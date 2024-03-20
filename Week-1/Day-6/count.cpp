@@ -1,39 +1,63 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// } Driver Code Ends
+// User function template for C++
 class Solution
 {
 public:
     int search(string pat, string txt)
     {
         // code here
-        vector<int> p(256, 0);
-        vector<int> tx(256, 0);
+        int t = txt.size();
+        int p = pat.size();
+        vector<int> freqp(26, 0);
+        vector<int> freqt(26, 0);
 
-        int ps = pat.size();
-        int ts = txt.size();
-
-        for (int i = 0; i < ps; i++)
+        for (int i = 0; i < p; i++)
         {
-            p[pat[i]]++;
-            tx[txt[i]]++;
+            freqp[pat[i] - 'a']++;
+            freqt[txt[i] - 'a']++;
+        }
+        int ans = 0;
+        if (freqp == freqt)
+        {
+            ans++;
         }
 
-        int ans = 0;
-        if (p == tx)
-            ans++;
-
-        int i = 0;
-        int j = ps;
-
-        while (j < ts)
+        int l = 0, r = p;
+        while (r < t)
         {
-            tx[txt[j]]++;
-            tx[txt[i]]--;
-
-            if (p == tx)
+            freqt[txt[r] - 'a']++;
+            freqt[txt[l] - 'a']--;
+            if (freqp == freqt)
+            {
                 ans++;
-            i++;
-            j++;
+            }
+            l++;
+            r++;
         }
 
         return ans;
     }
 };
+
+//{ Driver Code Starts.
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        string pat, txt;
+        cin >> txt >> pat;
+        Solution ob;
+        auto ans = ob.search(pat, txt);
+        cout << ans << "\n";
+    }
+    return 0;
+}
+// } Driver Code Ends

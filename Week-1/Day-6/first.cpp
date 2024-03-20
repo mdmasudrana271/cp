@@ -35,7 +35,7 @@ int main()
             {
                 ans.push_back(0);
             }
-            if (negq.front() == q.front())
+            if (!negq.empty() && negq.front() == q.front())
             {
                 negq.pop();
                 q.pop();
