@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://codeforces.com/contest/1744/submission/252337938
-// https://codeforces.com/contest/1744/submission/252348241
-
 int main()
 {
     // write c++ program code
