@@ -6,15 +6,15 @@ int main()
     // write c++ program code
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    int x, s;
-    cin >> x >> s;
+    int k, s;
+    cin >> k >> s;
     int cnt = 0;
-    for (int i = 0; i <= x; i++)
+    for (int i = 0; i <= k; i++)
     {
-        for (int j = 0; j <= x; j++)
+        for (int j = 0; j <= k; j++)
         {
-            int z = s - i - j;
-            if (z >= 0 && z <= s)
+            int res = s - i - j;
+            if (res >= 0 && res <= k)
             {
                 cnt++;
             }
@@ -22,5 +22,6 @@ int main()
     }
 
     cout << cnt << endl;
+
     return 0;
 }
