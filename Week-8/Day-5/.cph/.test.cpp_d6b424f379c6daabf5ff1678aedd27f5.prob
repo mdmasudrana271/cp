@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/media/monster/New Volume/cp/Week-8/Day-5/test.cpp","tests":[{"id":1715755812555,"input":"1\n7\n1 3 5 2 4 7 7","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/monster/New Volume/cp/Week-8/Day-5/test.cpp","group":"local","local":true}
