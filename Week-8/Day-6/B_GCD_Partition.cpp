@@ -22,13 +22,13 @@ int main()
             cin >> v[i];
         }
 
-        vector<int> pref(n + 1);
+        vector<ll> pref(n + 1);
         for (int i = 1; i <= n; i++)
         {
             pref[i] = pref[i - 1] + v[i - 1];
         }
 
-        int ans = INT_MIN;
+        ll ans = INT_MIN;
         for (int i = 1; i < n; i++)
         {
             ans = max(ans, gcd(pref[i], (pref[n] - pref[i])));
