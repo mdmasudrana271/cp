@@ -19,20 +19,24 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        ll n;
         cin >> n;
-        vector<pair<int, int>> v(n);
-        for (int i = 0; i < n; i++)
+        vector<pair<ll, ll>> v(n + 1);
+        for (int i = 1; i <= n; i++)
         {
             cin >> v[i].first >> v[i].second;
         }
-        sort(v.begin(), v.end(), greater<pair<int, int>>());
-        pbds<int> p;
-        int cnt = 0;
-        for (int i = 0; i < n; i++)
+        sort(v.begin() + 1, v.end());
+        pbds<ll> p;
+        ll cnt = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            p.insert(v[i].second);
+        }
+        for (int i = 1; i <= n; i++)
         {
             cnt += p.order_of_key(v[i].second);
-            p.insert(v[i].second);
+            p.erase(v[i].second);
         }
         cout << cnt << endl;
     }
