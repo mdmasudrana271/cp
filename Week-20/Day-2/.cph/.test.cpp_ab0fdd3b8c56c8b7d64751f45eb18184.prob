@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/media/monster/A programming&cp/cp/Week-20/Day-2/test.cpp","tests":[{"id":1725950703436,"input":"4\n2 2\n7 2\n5 3\n1000000000 1000000000\n","output":"1\n5\n1\n347369930"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/monster/A programming&cp/cp/Week-20/Day-2/test.cpp","group":"local","local":true}
