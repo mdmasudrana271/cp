@@ -19,41 +19,51 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        string s;
-        cin >> s;
-        int cnt = n - 1;
+        int n, m, k;
+        cin >> n >> m >> k;
+        vector<int> a(n), b(m);
+        map<int, int> mp;
         for (int i = 0; i < n; i++)
         {
-            if (s[i] == 'B')
-            {
-                cnt--;
-            }
-            else
-            {
-                break;
-            }
+            cin >> a[i];
+            mp[a[i]] = 1;
         }
-        for (int i = n - 1; i >= 0; i--)
+        for (int i = 0; i < m; i++)
         {
-            if (s[i] == 'A')
+            cin >> b[i];
+            if (mp[b[i]] == 1)
             {
-                cnt--;
+                mp[b[i]] = -1;
             }
-            else
+            else if (mp[b[i]] == 0)
             {
-                break;
-            }
-        }
-        if (cnt >= 0)
-        {
 
-            cout << cnt << endl;
+                mp[b[i]] = 2;
+            }
+        }
+        int x = k / 2, y = k / 2;
+        for (int i = 1; i <= k; i++)
+        {
+            if (mp[i] == 1)
+            {
+                x--;
+            }
+            if (mp[i] == 2)
+            {
+                y--;
+            }
+            if (mp[i] == 0)
+            {
+                x = -1;
+            }
+        }
+        if (x >= 0 && y >= 0)
+        {
+            cout << "YES" << endl;
         }
         else
         {
-            cout << 0 << endl;
+            cout << "NO" << endl;
         }
     }
     return 0;
